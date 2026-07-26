@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Miss_Fajardose } from "next/font/google";
+import { Miss_Fajardose } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +8,7 @@ export const metadata: Metadata = {
 };
 
 export const missFajardose = Miss_Fajardose({
+  variable: "--font-miss-fajar-dose",
   subsets: ["latin"],
   weight: "400",
 });
@@ -28,10 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased `}
-    >
+    <html lang="nl" className={`${missFajardose.variable} h-full antialiased `}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
