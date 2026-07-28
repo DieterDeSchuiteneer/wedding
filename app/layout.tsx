@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Coiny,
-  Kapakana,
-  Limelight,
-  Major_Mono_Display,
-  Miss_Fajardose,
-  Tapestry,
-} from "next/font/google";
+import { Limelight, Miss_Fajardose, Tapestry } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
