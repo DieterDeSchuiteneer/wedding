@@ -10,7 +10,7 @@ export default function () {
   return (
     <div
       className={cn(
-        "ml-10 my-1 h-11 w-0 transition-all duration-350 border-transparent",
+        "ml-9 my-1 h-11 w-0 transition-all duration-350 border-transparent opacity-40",
         inView ? "border-gray-400 border" : ""
       )}
       ref={ref}

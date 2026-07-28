@@ -1,13 +1,12 @@
 import {
   IconCamera,
   IconDeviceGamepad,
-  IconDeviceGamepad2,
   IconGlassChampagne,
   IconKey,
   IconToolsKitchen2,
 } from "@tabler/icons-react";
+import TimelineSpacer from "../TimelineSpacer";
 import TimeLineItem from "./TimelineItem";
-import TimelineSpacer from "./TimelineSpacer";
 
 export default function TimeLine() {
   const items: React.ComponentProps<typeof TimeLineItem>[] = [

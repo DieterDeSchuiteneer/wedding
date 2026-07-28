@@ -1,12 +1,10 @@
 import HeroSectionHome from "./_components/HeroSectionHome";
-import Location from "./_components/Location";
-import TimeLine from "./_components/Timeline";
+import TimeLine from "./_components/timeline/Timeline";
 
 export default function Home() {
   return (
-    <main className="h-full overflow-auto">
+    <main className="h-full overflow-auto scroll-smooth scrollbar-gutter-stable ">
       <HeroSectionHome />
-      <Location/>
       <TimeLine />
     </main>
   );

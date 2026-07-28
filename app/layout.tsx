@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Miss_Fajardose } from "next/font/google";
+import {
+  Coiny,
+  Kapakana,
+  Limelight,
+  Major_Mono_Display,
+  Miss_Fajardose,
+  Tapestry,
+} from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,6 +16,18 @@ export const metadata: Metadata = {
 
 export const missFajardose = Miss_Fajardose({
   variable: "--font-miss-fajar-dose",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+export const coiny = Tapestry({
+  variable: "--font-coiny",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+export const limeLight = Limelight({
+  variable: "--font-lime-light",
   subsets: ["latin"],
   weight: "400",
 });
