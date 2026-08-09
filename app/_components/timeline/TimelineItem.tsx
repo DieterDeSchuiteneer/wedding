@@ -1,4 +1,4 @@
-import { coiny, limeLight } from "@/app/layout";
+import { limeLight, tapestry } from "@/app/layout";
 import { IconDirections } from "@tabler/icons-react";
 import { ReactElement } from "react";
 import FlipCard from "./FlipCard";
@@ -21,10 +21,10 @@ export default function TimeLineItem({
   return (
     <FlipCard
       offset={0.75}
-      className={`flex items-center gap-4 ${coiny.className}`}
+      className={`flex items-center gap-4 ${tapestry.className}`}
     >
       <>
-        <div className=" rounded-full size-20 flex items-center justify-center ">
+        <div className="rounded-full size-20 flex items-center justify-center ">
           {icon}
         </div>
         <div className="">

@@ -13,8 +13,8 @@ export const missFajardose = Miss_Fajardose({
   weight: "400",
 });
 
-export const coiny = Tapestry({
-  variable: "--font-coiny",
+export const tapestry = Tapestry({
+  variable: "--font-tapestry",
   subsets: ["latin"],
   weight: "400",
 });
@@ -31,7 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={`${missFajardose.variable} h-full antialiased `}>
+    <html
+      lang="nl"
+      className={`${missFajardose.variable} h-full antialiased ${limeLight.variable} `}
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

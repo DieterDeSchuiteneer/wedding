@@ -5,17 +5,20 @@ import { useInView } from "react-intersection-observer";
 
 type Props = {
   offset: number;
+  delay?: number;
   className?: string;
 };
 
 export default function FlipCard({
   children,
   offset,
+  delay = 0,
   className,
 }: PropsWithChildren<Props>) {
   const { ref, inView } = useInView({
     /* Optional options */
     triggerOnce: true,
+    delay,
     threshold: offset,
   });
 
