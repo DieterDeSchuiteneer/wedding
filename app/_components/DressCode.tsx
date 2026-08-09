@@ -1,4 +1,4 @@
-export default function Rsvp() {
+export default function D() {
   return (
     <div className="  w-full p-8">
       <h2 className="text-6xl">Planning</h2>
