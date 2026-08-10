@@ -1,3 +1,4 @@
+import Dresscode from "./_components/DressCode";
 import HeroSectionHome from "./_components/HeroSectionHome";
 import Rsvp from "./_components/Rsvp";
 import TimeLine from "./_components/timeline/Timeline";
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSectionHome />
       <TimeLine />
       <Rsvp />
+      <Dresscode />
     </main>
   );
 }

@@ -3,7 +3,12 @@ import Image from "next/image";
 export default function HeroSectionHome() {
   return (
     <div className="h-dvh w-dvw relative overflow-hidden text-white">
-      <Image src={"/hbc.webp"} alt={"serre achtergrond"} fill />
+      <Image
+        src={"/hbc.webp"}
+        alt={"serre achtergrond"}
+        fill
+        objectFit="cover"
+      />
       <div className="bg-white/20 backdrop-blur-sm w-full h-full z-10 " />
       <div className="overflow-hidden text-center absolute top-0 w-full my-16 h-full flex flex-col">
         <h1
