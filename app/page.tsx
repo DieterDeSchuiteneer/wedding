@@ -6,7 +6,7 @@ import TimeLine from "./_components/timeline/Timeline";
 
 export default function Home() {
   return (
-    <main className="h-full overflow-auto scroll-smooth scrollbar-gutter-stable flex flex-col gap-14">
+    <main className="h-full overflow-y-auto overflow-x-hidden scroll-smooth scrollbar-gutter-stable flex flex-col gap-14">
       <HeroSectionHome />
       <TimeLine />
       <Rsvp />
