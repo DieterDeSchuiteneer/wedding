@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Subtitle from "./atoms/Subtitle";
+import FlipCard from "./timeline/FlipCard";
 
 export default function Dresscode() {
   return (
     <div className="">
-      <h2 className="text-6xl">Dresscode </h2>
       <div className="grid grid-cols-2">
         <div className="w-dvw h-dvh relative">
           <Image
@@ -13,10 +14,20 @@ export default function Dresscode() {
             objectFit="cover"
             objectPosition="20% "
           />
-          <p className="absolute center top-6 text-white font-retro text-shadow-2xs  w-3/4 left-1/2 -translate-x-1/2">
-            Strak in het pak of een prachtig kleed. De kleuren laten wij aan
-            jullie over!
-          </p>
+          <div className="bg-white/20 backdrop-blur-sm w-full h-full z-10 text-shadow-2xs " />
+          <div className="absolute  top-0  w-full  bg-linear-to-b  from-black/40 to-transparent h-full">
+            <div className="text-white flex flex-col items-center justify-center pt-14">
+              <div className="w-3/4">
+                <Subtitle>Dresscode</Subtitle>
+              </div>
+              <FlipCard offset={1} delay={300} className="w-3/4 text-center">
+                <p className="font-retro  ">
+                  Strak in het pak of een prachtig kleed. De kleuren laten wij
+                  aan jullie over!
+                </p>
+              </FlipCard>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import {
   IconKey,
   IconToolsKitchen2,
 } from "@tabler/icons-react";
+import Subtitle from "../atoms/Subtitle";
 import TimeLineItem from "./TimelineItem";
 import TimelineSpacer from "./TimelineSpacer";
 
@@ -50,8 +51,8 @@ export default function TimeLine() {
   ];
 
   return (
-    <div className="  w-full p-8">
-      <h2 className="text-6xl">Planning</h2>
+    <div className="w-3/4 m-auto">
+      <Subtitle>Planning</Subtitle>
       <div className="flex flex-col items-center justify-center w-5/6">
         {items.map((item, index) => (
           <div key={index} className="w-full">

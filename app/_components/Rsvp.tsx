@@ -3,7 +3,7 @@
 import { cn } from "@sglara/cn";
 import { IconSend } from "@tabler/icons-react";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./atoms/Button";
 import RsvpFrom from "./RsvpForm";
 import FlipCard from "./timeline/FlipCard";
 
