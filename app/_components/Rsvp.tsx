@@ -1,23 +1,26 @@
+"use client";
+
 import { cn } from "@sglara/cn";
 import { IconSend } from "@tabler/icons-react";
-import { limeLight } from "../layout";
+import { useState } from "react";
 import Button from "./Button";
 import RsvpFrom from "./RsvpForm";
 import FlipCard from "./timeline/FlipCard";
 
 export default function Rsvp() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="w-full h-24 flex items-center justify-center">
         <FlipCard offset={0.5}>
-          <Button command="show-modal" commandfor="rsv-dialog">
+          <Button onClick={() => setIsOpen((state) => !state)}>
             <IconSend />
-            <span className={cn("", limeLight.className)}>RSPV</span>
+            <span className={cn("font-retro")}>RSPV</span>
           </Button>
         </FlipCard>
       </div>
 
-      <dialog id="rsv-dialog" className="w-full h-full ">
+      <dialog id="rsv-dialog" className="w-full h-full " open={isOpen}>
         <RsvpFrom />
       </dialog>
     </>

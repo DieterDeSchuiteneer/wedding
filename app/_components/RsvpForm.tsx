@@ -1,10 +1,6 @@
 "use client";
 import { cn } from "@sglara/cn";
-import { IconSend } from "@tabler/icons-react";
 import { useState } from "react";
-import { limeLight } from "../layout";
-import Button from "./Button";
-import FlipCard from "./timeline/FlipCard";
 
 export default function RsvpFrom() {
   const [isComming, setIscomming] = useState<boolean | undefined>(undefined);
