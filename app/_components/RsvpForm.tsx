@@ -1,36 +1,30 @@
-"use client";
 import { cn } from "@sglara/cn";
-import { useState } from "react";
 
 export default function RsvpFrom() {
-  const [isComming, setIscomming] = useState<boolean | undefined>(undefined);
-
   return (
-    <>
-      {
-        <div
-          className={cn("w-full flex gap-0 flex-row p-4 font-retro text-xl")}
-        >
-          <button
-            onClick={() => setIscomming(true)}
-            className={cn(
-              " border border-mauve-800 w-full transition-all rounded-l-full border-r-0",
-              isComming === true ? "bg-mauve-500" : ""
-            )}
-          >
-            Ik kom
-          </button>
-          <button
-            onClick={() => setIscomming(false)}
-            className={cn(
-              " border border-mauve-800 w-full rounded-r-full border-l-0",
-              isComming === false ? "bg-mauve-500" : ""
-            )}
-          >
-            ik kom niet
-          </button>
-        </div>
-      }
-    </>
+    <form className={cn("w-full flex gap-0 flex-row p-4 font-retro text-xl")}>
+      <label className="w-full cursor-pointer">
+        <input
+          type="radio"
+          name="attendance"
+          value="coming"
+          className="peer sr-only"
+        />
+        <span className="block w-full rounded-l-full border border-mauve-800 border-r-0 text-center transition-all peer-checked:bg-mauve-500">
+          Ik kom
+        </span>
+      </label>
+      <label className="w-full cursor-pointer">
+        <input
+          type="radio"
+          name="attendance"
+          value="not-coming"
+          className="peer sr-only"
+        />
+        <span className="block w-full rounded-r-full border border-mauve-800 border-l-0 text-center transition-all peer-checked:bg-mauve-500">
+          Ik kom niet
+        </span>
+      </label>
+    </form>
   );
 }

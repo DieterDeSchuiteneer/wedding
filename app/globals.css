@@ -24,3 +24,79 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+.rsvp-page {
+  position: relative;
+}
+
+.rsvp-page__content {
+  position: relative;
+  z-index: 1;
+  animation: rsvp-page-enter 700ms ease-out both;
+}
+
+.rsvp-page__shuffle,
+.rsvp-page__shuffle::before,
+.rsvp-page__shuffle::after {
+  position: absolute;
+  inset: 0;
+  transform-origin: top right;
+  pointer-events: none;
+}
+
+.rsvp-page__shuffle {
+  z-index: 2;
+  background: var(--color-mauve-800);
+  animation: rsvp-card-shuffle 650ms cubic-bezier(0.65, 0, 0.35, 1) 80ms
+    both;
+}
+
+.rsvp-page__shuffle::before,
+.rsvp-page__shuffle::after {
+  content: "";
+  background: var(--color-mauve-500);
+}
+
+.rsvp-page__shuffle::before {
+  transform: rotate(4deg);
+  animation: rsvp-card-shuffle 650ms cubic-bezier(0.65, 0, 0.35, 1) 40ms
+    both;
+}
+
+.rsvp-page__shuffle::after {
+  transform: rotate(-7deg);
+  animation: rsvp-card-shuffle 650ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes rsvp-card-shuffle {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(110%, -8%) rotate(14deg);
+  }
+}
+
+@keyframes rsvp-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rsvp-page__content,
+  .rsvp-page__shuffle,
+  .rsvp-page__shuffle::before,
+  .rsvp-page__shuffle::after {
+    animation: none;
+  }
+
+  .rsvp-page__shuffle {
+    display: none;
+  }
+}
