@@ -1,18 +1,18 @@
 import Link from "next/link";
-import RsvpFrom from "../_components/RsvpForm";
+import TimeLine from "../_components/timeline/Timeline";
 
-export default function RsvpPage() {
+export default function ProgrammaPage() {
   return (
     <main className="rsvp-page min-h-dvh w-screen overflow-hidden bg-white p-4">
       <div className="rsvp-deck">
         <div className="rsvp-deck__card rsvp-deck__card--back" aria-hidden="true" />
         <div className="rsvp-deck__card rsvp-deck__card--middle" aria-hidden="true" />
         <div className="rsvp-deck__card rsvp-deck__card--front">
-          <div className="rsvp-deck__content">
+          <div className="rsvp-deck__content flex flex-col gap-8">
             <Link href="/" className="font-retro text-mauve-800 underline">
-              Terug
+              Naar de startpagina
             </Link>
-            <RsvpFrom />
+            <TimeLine />
           </div>
         </div>
       </div>
