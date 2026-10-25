@@ -1,42 +1,54 @@
-import Image from "next/image";
+import {
+  IconMessageCircleHeart,
+  IconPaw,
+  IconSalad,
+  IconUsers,
+} from "@tabler/icons-react";
+import Reveal from "./atoms/Reveal";
 import Subtitle from "./atoms/Subtitle";
-import FlipCard from "./timeline/FlipCard";
+
+const iconProps = { className: "size-7 text-champagne", stroke: 1 };
+
+const items = [
+  {
+    icon: <IconPaw {...iconProps} />,
+    title: "Viervoeters",
+    text: "Onze trouwe viervoeters zijn er ook bij. Net als wij zullen ze heel blij zijn jullie te zien! Is dat niet wederzijds, dan negeer je ze best even in het begin.",
+  },
+  {
+    icon: <IconSalad {...iconProps} />,
+    title: "Allergieën & diëten",
+    text: "Heb je bepaalde allergieën of een dieet? Vermeld het bij je RSVP, dan houden wij er rekening mee.",
+  },
+  {
+    icon: <IconUsers {...iconProps} />,
+    title: "Klein & gezellig",
+    text: "We houden het relatief klein: op het feest zelf zijn we met een dertigtal personen.",
+  },
+  {
+    icon: <IconMessageCircleHeart {...iconProps} />,
+    title: "Vragen?",
+    text: "Geniet er zoveel mogelijk van! Heb je nog vragen, stel ze gerust.",
+  },
+];
 
 export default function Info() {
   return (
-    <div className="flex flex-col items-center justify-center w-3/4 m-auto">
-      <Subtitle>Praktische info</Subtitle>
-      <div className="flex flex-col gap-8">
-        <FlipCard offset={1} delay={300} className=" text-center">
-          <p className="font-retro font-extralight">
-            Onze trouwe viervoeters gaan aanwezig zijn, net zoals wij gaan zij
-            heel blij zijn jullie te zien!
-            <br />
-            Indien dit niet wederzijds is kan je deze best negeren in het begin!
-          </p>
-        </FlipCard>
-        <FlipCard offset={1} delay={300} className="text-center">
-          <p className="font-retro">
-            Indien jullie bepaalede alergien/dieten hebben gelieve dit op
-            voorhand nog eens te vermelden aan ons!
-          </p>
-        </FlipCard>
-        <FlipCard offset={1} delay={300} className=" text-center">
-          <p className="font-retro">
-            We houden het relatief klein dus dit houd in dat op het feest zelf
-            een 30 tal personen aanwezig zullen zijn.
-          </p>
-        </FlipCard>
-        <FlipCard offset={1} delay={300} className=" text-center">
-          <p className="font-retro">
-            Geniet er zo veel mogelijk van, hebben jullie nog vragen stel ze
-            maar!
-          </p>
-        </FlipCard>
-        <div className="w-full flex justify-center mb-24">
-          <Image src="/flower.svg" alt="Logo" width={100} height={100} />
-        </div>
+    <section className="mx-auto w-full max-w-3xl px-6 py-24">
+      <Subtitle eyebrow="Goed om te weten">Praktische info</Subtitle>
+      <div className="grid gap-x-12 gap-y-14 sm:grid-cols-2">
+        {items.map((item, i) => (
+          <Reveal
+            key={item.title}
+            delay={(i % 2) * 150}
+            className="flex flex-col items-center text-center sm:items-start sm:text-left"
+          >
+            {item.icon}
+            <h3 className="eyebrow mt-4 mb-2">{item.title}</h3>
+            <p className="text-lg leading-relaxed text-mauve-800">{item.text}</p>
+          </Reveal>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
