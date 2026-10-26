@@ -39,7 +39,7 @@ export default function Countdown({ date }: { date: string }) {
         <div key={label} className="flex items-start gap-6 sm:gap-10">
           {i > 0 && <span aria-hidden="true" className="mt-4 h-6 w-px bg-current opacity-30" />}
           <div className="flex flex-col items-center">
-            <dd className="text-4xl font-light tabular-nums sm:text-5xl">
+            <dd className="font-retro text-4xl tabular-nums sm:text-5xl">
               {parts ? value : "–"}
             </dd>
             <dt className="eyebrow mt-1 text-[0.65rem] opacity-80">{label}</dt>

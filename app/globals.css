@@ -7,6 +7,7 @@
   --color-ink: var(--color-mauve-900);
   --font-script: var(--font-miss-fajardose), cursive;
   --font-serif: var(--font-cormorant), "Times New Roman", serif;
+  --font-retro: var(--font-limelight), "Times New Roman", serif;
 }
 
 body {
@@ -33,10 +34,10 @@ body::after {
 }
 
 @utility eyebrow {
-  font-family: var(--font-serif);
+  font-family: var(--font-retro);
   font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.32em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 

@@ -35,7 +35,7 @@ export default function HeroSectionHome() {
         </h1>
         <div className="hero-reveal flex flex-col items-center gap-3" style={{ animationDelay: "800ms" }}>
           <Ornament className="text-ivory/80" />
-          <p className="text-2xl font-light tracking-wide">{wedding.dateLabel}</p>
+          <p className="font-retro text-2xl tracking-wide">{wedding.dateLabel}</p>
           <p className="eyebrow opacity-90">{wedding.venue.name} · Oudenaarde</p>
         </div>
         <div className="hero-reveal mt-6" style={{ animationDelay: "1150ms" }}>
