@@ -4,32 +4,30 @@ import { PropsWithChildren } from "react";
 import { useInView } from "react-intersection-observer";
 
 type Props = {
-  offset: number;
   delay?: number;
   className?: string;
 };
 
-export default function FlipCard({
+// Fades content up into place the first time it scrolls into view.
+export default function Reveal({
   children,
-  offset,
   delay = 0,
   className,
 }: PropsWithChildren<Props>) {
   const { ref, inView } = useInView({
-    /* Optional options */
     triggerOnce: true,
-    delay,
-    threshold: offset,
+    threshold: 0.2,
   });
 
   return (
     <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-350 opacity-100 rotate-0",
-        !inView ? "rotate-x-90 opacity-0" : "",
+        "transition duration-1000 ease-[cubic-bezier(0.2,0.7,0.2,1)] motion-reduce:transition-none",
+        inView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
         className
       )}
-      ref={ref}
     >
       {children}
     </div>

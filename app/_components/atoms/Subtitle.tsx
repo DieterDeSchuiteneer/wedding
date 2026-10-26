@@ -1,11 +1,22 @@
 import { cn } from "@sglara/cn";
 import { PropsWithChildren } from "react";
+import Ornament from "./Ornament";
 
-export default function Subtitle({ children }: PropsWithChildren) {
+type Props = {
+  eyebrow?: string;
+  className?: string;
+};
+
+export default function Subtitle({
+  children,
+  eyebrow,
+  className,
+}: PropsWithChildren<Props>) {
   return (
-    <h3 className={cn("text-6xl w-full text-center md:text-left leading-9")}>
-      {children}
-      <hr className="mb-7 opacity-40" />
-    </h3>
+    <header className={cn("mb-12 flex flex-col items-center text-center", className)}>
+      {eyebrow && <p className="eyebrow mb-3 opacity-70">{eyebrow}</p>}
+      <h2 className="font-script text-6xl leading-none md:text-7xl">{children}</h2>
+      <Ornament className="mt-5" />
+    </header>
   );
 }

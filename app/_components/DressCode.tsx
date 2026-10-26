@@ -1,35 +1,28 @@
 import Image from "next/image";
+import Reveal from "./atoms/Reveal";
 import Subtitle from "./atoms/Subtitle";
-import FlipCard from "./timeline/FlipCard";
 
 export default function Dresscode() {
   return (
-    <div className="">
-      <div className="grid grid-cols-2">
-        <div className="w-dvw h-dvh relative">
-          <Image
-            src={"/doggosjpg.jpg"}
-            alt={"De ergegasten"}
-            fill
-            objectFit="cover"
-            objectPosition="20% "
-          />
-          <div className="bg-white/20 backdrop-blur-sm w-full h-full z-10 text-shadow-2xs " />
-          <div className="absolute  top-0  w-full  bg-linear-to-b  from-black/40 to-transparent h-full">
-            <div className="text-white flex flex-col items-center justify-center pt-14">
-              <div className="w-3/4">
-                <Subtitle>Dresscode</Subtitle>
-              </div>
-              <FlipCard offset={1} delay={300} className="w-3/4 text-center">
-                <p className="font-retro  ">
-                  Strak in het pak of een prachtig kleed. De kleuren laten wij
-                  aan jullie over!
-                </p>
-              </FlipCard>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section className="relative flex min-h-[85dvh] w-full items-end overflow-hidden text-ivory">
+      <Image
+        src="/doggosjpg.jpg"
+        alt="Onze honden, de eregasten"
+        fill
+        sizes="100vw"
+        className="object-cover object-[20%_center]"
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-mauve-950/85 via-mauve-950/30 to-mauve-950/10" />
+      <Reveal className="relative mx-auto w-full max-w-xl px-6 pb-20 text-center">
+        <Subtitle eyebrow="Wat trek ik aan?" className="mb-6">
+          Dresscode
+        </Subtitle>
+        <p className="text-2xl font-light leading-relaxed">
+          Strak in het pak of een prachtig kleed.
+          <br />
+          <span className="italic">De kleuren laten wij aan jullie over!</span>
+        </p>
+      </Reveal>
+    </section>
   );
 }
