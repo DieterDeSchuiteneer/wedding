@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Miss_Fajardose } from "next/font/google";
+import { Cormorant_Garamond, Limelight, Miss_Fajardose } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,6 +25,12 @@ const missFajardose = Miss_Fajardose({
   weight: "400",
 });
 
+const limelight = Limelight({
+  variable: "--font-limelight",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${missFajardose.variable} ${cormorant.variable} h-full scroll-smooth antialiased`}
+      className={`${missFajardose.variable} ${limelight.variable} ${cormorant.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
